@@ -31,14 +31,11 @@ skills:
   - High Performance Computing
 
 
-url: "localhost:4000" # the base hostname & protocol for your site
+url: "https://narendrasingh.in/" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 title: Portfolio
 description: > # this means to ignore newlines until next property
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-
+  This is narendra singh online portfolio.
 
 # social media usernames
 #social-twitter: Narendra748
