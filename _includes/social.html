@@ -1,0 +1,22 @@
+<div class="social">
+<ul >
+    {% if site.social-github  %}
+    <li><a href="https://github.com/{{site.social-github}}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+    {% endif %}
+    {% if site.social-stack_overflow %}
+    <li><a href="https://stackoverflow.com/users/{{site.social-github}}" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a></li>
+    {% endif %}
+    {% if site.social-linkedin  %}
+    <li><a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+    {% endif %}
+    {% if site.social-twitter %}
+    <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    {% endif %}
+    {% if site.social-facebook  %}
+    <li><a href="https://www.facebook.com/{{site.social-facebook}}"  target="_blank"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+    {% endif %}
+    {% if site.email %}
+    <li><a href="mailto:{{site.email}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+    {% endif %}
+</ul>
+</div>

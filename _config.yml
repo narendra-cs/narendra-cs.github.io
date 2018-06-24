@@ -1,0 +1,59 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+
+author: Narendra Singh
+author-img: narendra-singh.jpg
+email: narendra.cs.biet@gmail.com
+author-title: Data Enthusiast
+about-author: > # ignore newlines until next property
+      Who is always on the hunt of opportunities in the field of Data Science, 
+      which will allow me to leverage my core competencies in Machine Learning, 
+      Big Data processing, Inferential Statistics and Strategic Decision Making, 
+      in order to provide insights that will help business to grow. I have 1+ year 
+      of experiance in working on hadoop to extract data from various sources, 
+      transform it and load it into hadoop. I am also having working experiance on hybrid High Performance Computing 
+      cluster having 400+ nodes at IIT Delhi.
+
+skills:
+  - Data Analytics / Data Science
+  - Machine Learning
+  - Hadoop
+  - Spark
+  - Python
+  - R
+  - Statistics
+  - High Performance Computing
+
+
+url: "localhost:4000" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+title: Portfolio
+description: > # this means to ignore newlines until next property
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+
+# social media usernames
+#social-twitter: Narendra748
+social-facebook: narendra.255
+social-linkedin: narendra-singh-83416686
+social-github:  narendra-cs
+#social-stack_overflow: 5869486/narendra-singh
+
+# CDN URL
+cdn_url: "https://cdnjs.cloudflare.com/ajax/libs"
+
+# Build settings
+markdown: kramdown
+
+plugins:
+    - jekyll-sitemap
+
+error-404-msg: Error 404 Page Not Found

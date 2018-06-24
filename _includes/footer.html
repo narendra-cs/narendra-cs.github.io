@@ -1,0 +1,24 @@
+<footer class="footer-area">
+	<div class="container-fluid">
+	    <div class="row">
+		<div class="col-sm-5 wow fadeInUp" data-wow-delay="0.1s" >
+		<blockquote class="quote">
+	    If you Torture the data long enough, it will confess.<br>
+	    <footer>Ronald Coase</footer>
+  		</blockquote>
+		</div> 
+		<div class="col-sm-4 wow fadeInUp" data-wow-delay="0.1s" >
+		<p>If you like what you see here, over my blog or GitHub repositories, let's talk. I'd <i class="fa fa-heart" style="color:red;"></i> to hear from you.</p>
+		</div>
+		<div class="col-sm-3 wow fadeInUp" data-wow-delay="0.1s">
+			<div class="line-heading">
+	      			<!--h3 class="line-heading-title contact-title">Contact me</h3-->
+				{% include social.html %}
+			</div>
+			<div class="copyright">
+				{{site.time | date: '%Y'}} &copy; {{site.author}}
+			</div>
+		</div>
+	    </div>
+	</div>
+</footer>
