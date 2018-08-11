@@ -31,7 +31,7 @@ skills:
   - High Performance Computing
 
 
-url: "https://narendrasingh.in/" # the base hostname & protocol for your site
+url: "https://narendrasingh.in" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 title: Portfolio
 description: > # this means to ignore newlines until next property
