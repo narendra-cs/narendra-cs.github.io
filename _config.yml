@@ -37,13 +37,6 @@ title: Portfolio
 description: > # this means to ignore newlines until next property
   This is narendra singh online portfolio.
 
-# social media usernames
-#social-twitter: Narendra748
-social-facebook: narendra.255
-social-linkedin: narendra-singh-83416686
-social-github:  narendra-cs
-#social-stack_overflow: 5869486/narendra-singh
-
 # CDN URL
 cdn_url: "https://cdnjs.cloudflare.com/ajax/libs"
 
@@ -52,5 +45,10 @@ markdown: kramdown
 
 plugins:
     - jekyll-sitemap
+    - jekyll-paginate
+    - jemoji
+
+paginate: 5
+paginate_path: "/blog/page/:num"
 
 error-404-msg: Error 404 Page Not Found

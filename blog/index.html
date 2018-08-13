@@ -1,0 +1,42 @@
+---
+layout: page
+title: Blog
+---
+<section class=blog-page-design-area>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-7 col-md-offset-1 col-sm-10 col-sm-offset-1">
+				{% for post in paginator.posts %}
+						<!-- SINGLE BLOG POST DESIGN AREA -->
+						<div class="single-blog-post wow fadeInDown" data-wow-delay="0.2s">
+							{% if post.img %}
+							<img src='{{"/assets/img/post/" | prepend: site.baseurl | append : post.img}}' class="img-responsive" alt="{{post.img}}" />
+							{% endif %}
+							<h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+							<div class="post-date">
+								{% if post.date %}
+								<span><i class="fa fa-calendar"></i>{{post.date | date: '%d,%b %Y'}}</span>
+								{% endif %}
+								{% if post.categories %}
+								<span><i class="fa fa-folder-open-o"></i> {% for category in post.categories %}{% if forloop.last %}{{category}}{% else %}{{category}},{% endif %} {% endfor %}</span>
+								{% endif %}
+							</div>
+							<p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+							<a href="{{post.url | prepend: site.baseurl}}" class="read-more hvr-sweep-to-top">Read more</a>
+						</div>
+						<!-- / END BLOG POST DESIGN AREA -->
+				{% endfor %}
+
+				<!-- START BLOG POST PAGINATION DESIGN AREA -->
+				{% include pagination.html %}
+				<!-- / END BLOG POST PAGINATION DESIGN AREA -->
+			</div>
+
+			<!-- START BLOG SIDEBAR DESIGN AREA -->
+			<div class="col-md-3 col-md-offset-0 col-sm-10 col-sm-offset-1">
+				{% include blog_sidebar.html %}
+			</div>
+			<!-- / EMD BLOG SIDEBAR DESIGN AREA -->
+		</div>
+	</div>
+</section>

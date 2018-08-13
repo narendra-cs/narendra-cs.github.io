@@ -1,14 +1,14 @@
 <div class="header-top-area">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-md-offset-1 col-sm-3">
+            <div class="col-md-3 col-md-offset-1 col-sm-4">
                 <!-- START LOGO DESIGN AREA -->
                 <div class="logo">
-                    <a href="{{site.url}}">{{site.author}}</a>
+                    <a href="{{site.url}}">{{site.data.author.Name}}</a>
                 </div>
                 <!-- END LOGO DESIGN AREA -->
             </div>
-            <div class="col-md-7 col-sm-9">
+            <div class="col-md-6 col-md-offset-1 col-sm-8">
                 <!-- START MENU DESIGN AREA -->
                 <div class="mainmenu">	
                     <div class="navbar navbar-nobg">
@@ -23,9 +23,9 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="smoth-scroll" href="{% if  page.url != '/' %}{{site.url}}{% endif %}#home">Home</a></li>
                                 <li><a class="smoth-scroll" href="{% if  page.url != '/' %}{{site.url}}{% endif %}#about">About</a></li>
-                                <!--li><a class="smoth-scroll" href="{% if  page.url != '/' %}{{site.url}}{% endif %}#project">Projets</a></li-->
+                                <li><a class="smoth-scroll" href="{% if  page.url != '/' %}{{site.url}}{% endif %}#project">Projets</a></li>
                                 <li><a href="{{ "/assets/pdf/resume.pdf" | prepend: site.baseurl }}" target="_blank">Resume</a></li>
-                                <li><a href="{{site.url}}/blog/">Blog</a></li>
+                                <!--li><a href="{{site.url}}/blog">Blog</a></li-->
                                 <li><a class="smoth-scroll" href="{% if  page.url != '/' %}{{site.url}}{% endif %}#contact">Contact</a></li>
                             </ul>
                         </div>

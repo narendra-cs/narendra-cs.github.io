@@ -1,16 +1,16 @@
 
-/*
-* ----------------------------------------------------------------------------------------
-* GLOBAL CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+/* ===================================
+1. General
+==================================== */
 
 body {
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6em;
     font-family: 'Poppins', sans-serif;
     color: #232323;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -25,6 +25,35 @@ h4,
 h5,
 h6 {
     font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+	line-height:1.1em;
+	margin-bottom: 20px;
+}
+
+h1 {
+    color:#484848;
+}
+
+h2 {
+    color:#184e8c;
+}
+
+h3,h4,h5 {
+    color:#3e6a9c;
+}
+
+h6 {
+    color:#fb8e0d;
+}
+
+h2.separator {
+    border-bottom: 1px solid #184e8c;
+    padding-bottom: 8px;
+}
+
+h3.separator {
+    border-bottom: 1px solid #3e6a9c;
+    padding-bottom: 8px;
 }
 
 a {
@@ -34,18 +63,25 @@ a {
     color: #000;
 }
 
-img {
-    width: 100%;
+a:active {
+	outline:0;
 }
 
 a:hover {
-    color: #fff;
     text-decoration: none;
 }
 
 a:focus {
     outline: none;
     text-decoration: none;
+}
+
+.clear {
+	clear:both;
+}
+
+img {
+    width: 100%;
 }
 
 p {
@@ -70,7 +106,7 @@ fieldset {
 }
 
 .section-padding {
-    padding: 40px 0px;
+    padding: 30px 0px;
 }
 
 .section-title {
@@ -80,13 +116,11 @@ fieldset {
 
 .section-title h2 {
     margin-top: 0;
-    font-weight: 500;
     text-transform: capitalize;
-    font-size: 40px;
 }
 
 .section-title p {
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .container, .container-fluid{
@@ -94,31 +128,9 @@ fieldset {
 }
 
 
-.bg-1 {
-   background-color: #428bca; /* Green */
-   color: #ffffff;
-}
-.bg-2 {
-   background-color: #474e5d; /* Dark Blue */
-   color: #ffffff;
- }
-.bg-3 {
-   background-color: #ffffff; /* White */
-   color: #555555;
-}
-
-.bg-4 { /* Black Gray */
-   background-color: #2f2f2f;
-   color: #ffffff;
-}
-
-
-
-/*
-* ----------------------------------------------------------------------------------------
-* PRELOADER & BOUNCE CCS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+/* ===================================
+2. Preloader
+==================================== */
 
 .preloader {
     background: #000;
@@ -195,11 +207,11 @@ fieldset {
     }
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* HOMEPAGE CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+
+/* ===================================
+3. Home page
+==================================== */
+
 .welcome-area {
     height: 100%;
 }
@@ -311,11 +323,9 @@ fieldset {
     }
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* TOP HEADER NAVIGATION CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+/* ===================================
+4. Top header navigation
+==================================== */
 
 .header-top-area {
     position: fixed;
@@ -337,10 +347,9 @@ fieldset {
     display: block;
     color: #fff;
     text-transform: capitalize;
-    /*font-weight: 400;*/
-    font-size: 28px;
+    font-size: 24px;
     font-family: 'Montserrat','Dancing Script', cursive;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .mainmenu .navbar-nav li a {
@@ -355,7 +364,7 @@ fieldset {
 
 .mainmenu .navbar-nav li a:hover {
     background: none;
-    color: #fff;
+    color: #fff;                                    /* change it */
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
@@ -392,7 +401,7 @@ fieldset {
 }
 
 .menu-bg .mainmenu .navbar-nav li a:hover {
-    color: #fff;
+    color: #fff;                                /* change it too */
 }
 
 
@@ -455,7 +464,8 @@ fieldset {
 * ABOUT CSS STYLE
 * ----------------------------------------------------------------------------------------
 */
-.about-me-area {  }
+.about-me-area {
+}
 
 .about-image {  }
 
@@ -483,7 +493,7 @@ fieldset {
     border-bottom: 1px dotted #ccc;
     display: inline-block;
     margin-right: 50px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 
 
@@ -495,7 +505,6 @@ fieldset {
 */
 
 .contact-me-area {
-  margin: 20px 0;
   background: #fff;
 }
 
@@ -586,7 +595,6 @@ fieldset {
 }
 
 footer .copyright{
-   font-size: 16 px;
    text-align: center;
    margin: 10px 0 0;
 }
@@ -678,11 +686,9 @@ footer .copyright{
 }
 
 
-/*
-* ----------------------------------------------------------------------------------------
-* SOCIAL LINKS CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+/* ===================================
+1. Social links
+==================================== */
 
 .social ul {
   margin: 0;
@@ -704,7 +710,7 @@ footer .copyright{
   color: #515151;
   display: block;
   padding: 5px;
-  font-size: 24px;
+  font-size: 20px;
   -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
   -o-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
   transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
@@ -767,6 +773,7 @@ footer .copyright{
 }
 
 
+
 .box {
   background: #fff;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
@@ -805,6 +812,33 @@ footer .copyright{
   display: block;
   width: 100%;
   margin: 0 0 2em 0;
+}
+
+.project-btn{
+text-align:center;
+}
+
+
+.project-btn li {
+  display: inline-block;
+  margin: 5px;
+  list-style: none;
+}
+
+.project-btn a {
+  text-decoration: none;
+  color: #263959;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ecf0f1;
+  background-color: #fafafa;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.project-btn a:hover {
+  background-color: #ecf0f1;
 }
 
 /*
@@ -855,4 +889,85 @@ footer .copyright{
   text-align: center;
   text-transform: capitalize;
   padding-top: 20%;
+}
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* PROJECT SCREENSHOTS CAROUSEL CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.carousel-control.left
+{
+    background: none;
+}
+.carousel-control.right
+{
+    background: none;
+}
+
+.carousel-control
+{
+    position: absolute;
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: auto;
+    color: #fff;
+    text-align: center;
+    opacity: 1;
+    text-shadow: none;
+}
+.carousel-control:hover
+{
+    color: #000;
+}
+.carousel-indicators
+{
+    bottom: 0px;
+}
+.carousel-indicators li
+{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000\9;
+    background-color: rgba(0,0,0,0);
+    border-radius: 50%;
+}
+.carousel-indicators .active
+{
+    width: 12px;
+    height: 12px;
+    margin: 0;
+}
+.carousel-caption
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-dialog {
+width:70%;
 }

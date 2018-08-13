@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="header-image wow fadeIn" data-wow-delay="0.1s">
-                            <img class="round-img" src="{{ site.url }}{{ site.baseurl }}/assets/img/authors/{{ site.author-img}}"  alt="{{site.author}}">
+                            <img class="round-img" src="{{ "/assets/img/authors/" | prepend: site.baseurl | append: site.data.author.Image }}"  alt="{{site.data.author.Name}}">
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,11 @@
+- Title: Mormo
+  Github_URL: https://github.com/narendra-cs/mormo
+  Description: Mormo is a command monitoring tool that capture commands issued by each user on linux system and store all the data to MongoDB for performing fast search on command's logs through Web UI, developed by Python web framework Django.
+  screenshots:
+            - Image_URL: mormo_home.png
+              Image_About: Mormo Home Page
+            - Image_URL: mormo_login.png
+              Image_About: Mormo Login Page
+            - Image_URL: mormo_logs.png
+              Image_About: Command Logs Search Page
+
