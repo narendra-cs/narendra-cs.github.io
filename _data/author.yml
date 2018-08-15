@@ -12,7 +12,7 @@ About: > # ignore newlines until next property
       transform it and load it into hadoop. I am also having working experience on hybrid High Performance Computing
       cluster, having 400+ nodes at IIT Delhi.
 
-# Skills: only 8 important skill
+# Skills: only 8 important skills
 Skills:
   - Data Analytics / Data Science
   - Machine Learning
@@ -29,3 +29,7 @@ social-facebook: narendra.255
 social-linkedin: narendra-singh-83416686
 social-github:  narendra-cs
 #social-stack_overflow: 5869486/narendra-singh
+
+
+quote: If you Torture the data long enough, it will confess.
+quote_author_name: Ronald Coase

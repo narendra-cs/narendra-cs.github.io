@@ -2,27 +2,42 @@
 layout: page
 title: Blog
 ---
-<section class=blog-page-design-area>
+<section class="blog-page-design-area">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-7 col-md-offset-1 col-sm-10 col-sm-offset-1">
 				{% for post in paginator.posts %}
 						<!-- SINGLE BLOG POST DESIGN AREA -->
 						<div class="single-blog-post wow fadeInDown" data-wow-delay="0.2s">
-							{% if post.img %}
-							<img src='{{"/assets/img/post/" | prepend: site.baseurl | append : post.img}}' class="img-responsive" alt="{{post.img}}" />
+							{% if post.video %}
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe width="800" height="500" src="https://www.youtube.com/embed/{{ post.video }}?rel=0&amp;controls=0&amp;showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
+							</div>
+							{% else %}
+								{% if post.images.size == 1 %}
+								{% assign img = post.images | first %}
+								<img src='{{"/assets/img/post/" | prepend: site.baseurl | append : img }}' class="img-responsive" alt="{{ post.title }}" />
+								{% else %}
+								<div class="blog-slider">
+									{% for img in post.images %}
+									<div class="single-blog-slider">
+										<img src='{{"/assets/img/post/" | prepend: site.baseurl | append : img }}' class="img-responsive" alt="{{ post.title }}" />
+									</div>
+									{% endfor %}
+								</div>
+								{% endif %}
 							{% endif %}
-							<h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+							<a href="{{ post.url | prepend: site.baseurl}}"><h1>{{ post.title }}</h1></a>
 							<div class="post-date">
 								{% if post.date %}
-								<span><i class="fa fa-calendar"></i>{{post.date | date: '%d,%b %Y'}}</span>
+								<span><i class="fa fa-calendar"></i>{{ post.date | date: '%d,%b %Y' }}</span>
 								{% endif %}
 								{% if post.categories %}
-								<span><i class="fa fa-folder-open-o"></i> {% for category in post.categories %}{% if forloop.last %}{{category}}{% else %}{{category}},{% endif %} {% endfor %}</span>
+								<span ><i class="fa fa-folder-open-o"></i> {% for category in post.categories %}{% if forloop.last %}{{ category }}{% else %}{{ category }}, {% endif %}{% endfor %}</span>
 								{% endif %}
 							</div>
-							<p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-							<a href="{{post.url | prepend: site.baseurl}}" class="read-more hvr-sweep-to-top">Read more</a>
+							<p>{{ post.description | strip_html | truncatewords: 60 }}</p>
+							<a href="{{ post.url | prepend: site.baseurl }}" class="read-more hvr-sweep-to-top">Read more</a>
 						</div>
 						<!-- / END BLOG POST DESIGN AREA -->
 				{% endfor %}

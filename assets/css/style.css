@@ -1,3 +1,19 @@
+/* ===================================
+1. General
+2. Preloader
+3. Top header navigation
+4. Home page
+5. About me
+6. Projects
+7. Project carousel
+8. Reviews
+9. Contact me
+10. Footer
+11. Footer quote
+12. Social links
+13. Aside, sidebar
+==================================== */
+
 
 /* ===================================
 1. General
@@ -7,7 +23,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6em;
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
     color: #232323;
     -moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -24,26 +40,26 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family:  sans-serif;
     font-weight:700;
 	line-height:1.1em;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 h1 {
-    color:#484848;
+    color: #484848;
 }
 
 h2 {
-    color:#184e8c;
+    color: #1c61b0;
 }
 
 h3,h4,h5 {
-    color:#3e6a9c;
+    color: #3e6a9c;
 }
 
 h6 {
-    color:#fb8e0d;
+    color: #fb8e0d;
 }
 
 h2.separator {
@@ -84,6 +100,12 @@ img {
     width: 100%;
 }
 
+.round-img {
+  border-radius:50%;
+  -webkit-border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 p {
     line-height: 24px;
 }
@@ -111,7 +133,8 @@ fieldset {
 
 .section-title {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top:10px;
 }
 
 .section-title h2 {
@@ -120,13 +143,19 @@ fieldset {
 }
 
 .section-title p {
-    font-weight: 400;
+    /*font-weight: 400;*/
 }
 
 .container, .container-fluid{
   min-height: 85%;
 }
 
+.error-404{
+  height: 83%;
+  text-align: center;
+  text-transform: capitalize;
+  padding-top: 20%;
+}
 
 /* ===================================
 2. Preloader
@@ -207,9 +236,160 @@ fieldset {
     }
 }
 
+/* ===================================
+3. Top header navigation
+==================================== */
+
+header .nav li a:hover,
+header .nav li a:focus,
+header .nav li.active a,
+header .nav li.active a:hover,
+header .nav li a.dropdown-toggle:hover,
+header .nav li a.dropdown-toggle:focus,
+header .nav li.active ul.dropdown-menu li a:hover,
+header .nav li.active ul.dropdown-menu li.active a{
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.header-top-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.logo {
+    padding-top: 28px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.logo a {
+    display: block;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 24px;
+    font-family: 'Montserrat','Dancing Script', cursive;
+    letter-spacing: 3px;
+}
+
+.mainmenu .navbar-nav li a {
+    color: #fff;
+    padding: 30px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.mainmenu .navbar-nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.nav li a:focus,
+.nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar {
+    margin: 0;
+}
+
+.menu-bg {
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    background: #3e4444;
+}
+
+.menu-bg .logo {
+    padding-top: 18px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.menu-bg .mainmenu .navbar-nav li a {
+    color: #fff;
+    padding: 20px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.menu-bg .mainmenu .navbar-nav li a:hover {
+    color: #fff;
+    background: #000;
+}
+
+
+.mainmenu ul {
+    list-style-type: none
+}
+
+.mainmenu li ul.sub-menu, .mainmenu ul li ul.sub-menu li ul.sub-menu {
+    background: #3e4444;
+    left: 12px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 115%;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    width: 120px;
+    z-index: 999;
+}
+
+.mainmenu ul li ul.sub-menu li {
+    padding: 0;
+    width: 100%;
+}
+
+.mainmenu ul li:hover ul.sub-menu {
+    top: 100%;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 999;
+    visibility: visible;
+}
+
+.mainmenu ul.nav > li ul li:hover ul.sub-menu {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    visibility: visible;
+}
+
+.mainmenu ul li ul.sub-menu li a {
+    color: #fff !important;
+    cursor: pointer;
+    display: block;
+    padding: 8px 10px 12px 20px;
+}
+
+.mainmenu ul li ul.sub-menu li:last-child a {
+    border-bottom: none;
+}
+
+.mainmenu ul li:hover ul.sub-menu li a:hover {
+    text-decoration: none;
+    background: #000;
+    padding: 8px 10px 12px 20px;
+}
 
 /* ===================================
-3. Home page
+4. Home page
 ==================================== */
 
 .welcome-area {
@@ -235,6 +415,11 @@ fieldset {
     z-index: -1;
 }
 
+.header-image {
+  width: 300px;
+  margin: 0 auto 30px;
+  float: none;
+}
 
 .display-table {
     display: table;
@@ -323,156 +508,32 @@ fieldset {
     }
 }
 
+
 /* ===================================
-4. Top header navigation
+5. About me
 ==================================== */
 
-.header-top-area {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    -webkit-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
-}
-
-.logo {
-    padding-top: 28px;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.logo a {
-    display: block;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: 24px;
-    font-family: 'Montserrat','Dancing Script', cursive;
-    letter-spacing: 3px;
-}
-
-.mainmenu .navbar-nav li a {
-    color: #fff;
-    padding: 30px 15px;
-    -webkit-transition: .3s;
-    transition: .3s;
-    font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-}
-
-.mainmenu .navbar-nav li a:hover {
-    background: none;
-    color: #fff;                                    /* change it */
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.nav li a:focus,
-.nav li a:hover {
-    background: none;
-    color: #fff;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.navbar {
-    margin: 0;
-}
-
-.menu-bg {
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    background: #000;
-}
-
-.menu-bg .logo {
-    padding-top: 18px;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-
-.menu-bg .mainmenu .navbar-nav li a {
-    color: #fff;
-    padding: 20px 15px;
-    -webkit-transition: .3s;
-    transition: .3s;
-}
-
-.menu-bg .mainmenu .navbar-nav li a:hover {
-    color: #fff;                                /* change it too */
-}
-
-
-.mainmenu ul {
-    list-style-type: none
-}
-
-.mainmenu li ul.sub-menu, .mainmenu ul li ul.sub-menu li ul.sub-menu {
-    background: #000;
-    left: 12px;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    position: absolute;
-    top: 115%;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    visibility: hidden;
-    width: 120px;
-    z-index: 999;
-}
-
-.mainmenu ul li ul.sub-menu li {
-    padding: 0;
-    width: 100%;
-}
-
-.mainmenu ul li:hover ul.sub-menu {
-    top: 100%;
-    opacity: 1;
-    filter: alpha(opacity=100);
-    z-index: 999;
-    visibility: visible;
-}
-
-.mainmenu ul.nav > li ul li:hover ul.sub-menu {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    visibility: visible;
-}
-
-.mainmenu ul li ul.sub-menu li a {
-    color: #fff !important;
-    cursor: pointer;
-    display: block;
-    padding: 8px 10px 12px 20px;
-}
-
-.mainmenu ul li ul.sub-menu li:last-child a {
-    border-bottom: none;
-}
-
-.mainmenu ul li:hover ul.sub-menu li a:hover {
-    text-decoration: none;
-    background: #333;
-    padding: 8px 10px 12px 20px;
-}
-
-/*
-* ----------------------------------------------------------------------------------------
-* ABOUT CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 .about-me-area {
+   height:100%;
 }
 
-.about-image {  }
+.about-image {
+}
 
+
+.about-image, .about-text {
+    padding-top: 60px;
+}
+
+.about-text {
+    font-size: 16px;
+    letter-spacing:1px;
+
+}
 .about-text h2 {
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
-    margin-top: 0;
+    margin-top: 30px;
     margin-bottom: 20px;
     color: #232323;
     letter-spacing: 2px;
@@ -480,15 +541,15 @@ fieldset {
 }
 
 .about-text p {
-    font-weight: 300;
     margin-bottom: 30px;
     text-align: justify;
+    line-height:1.5em;
 }
 
 .about-text ul li {
     width: 40%;
     float: left;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     color: #a3a3a3;
     border-bottom: 1px dotted #ccc;
     display: inline-block;
@@ -496,13 +557,207 @@ fieldset {
     padding-bottom: 0px;
 }
 
+/* ===================================
+6. Projects
+==================================== */
+
+.project-area {
+    background: #F7F7F7;
+}
+
+.box {
+  background: #fff;
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  text-align: justify;
+  padding: 2em;
+  margin: 0 1em 2em;
+}
+
+.box.box-style h3 {
+  margin-bottom: 0.25em;
+}
+
+.box.box-style .image {
+  position: relative;
+  left: 2em;
+  top: 2em;
+  margin: -4em 0 4em -4em;
+  width: auto;
+}
 
 
-/*
-* ----------------------------------------------------------------------------------------
-* CONTACT CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+.image {
+  display: inline-block;
+  position: relative;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+}
+
+.image.featured {
+  display: block;
+  width: 100%;
+  margin: 0 0 2em 0;
+}
+
+.project-btn{
+text-align:center;
+}
+
+
+.project-btn ul li {
+  display: inline-block;
+  margin: 5px;
+  list-style: none;
+}
+
+.project-btn a {
+  text-decoration: none;
+  color: #263959;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ecf0f1;
+  background-color: #fafafa;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.project-btn a:hover {
+  background-color: #ecf0f1;
+}
+
+
+/* ===================================
+7. Project carousel
+==================================== */
+
+.carousel-control.left
+{
+    background: none;
+}
+.carousel-control.right
+{
+    background: none;
+
+}
+
+.carousel-control
+{
+    position: absolute;
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    font-size: auto;
+    color: #fff;
+    text-align: center;
+    opacity: 1;
+    text-shadow: none;
+}
+
+
+.carousel-control:hover
+{
+    color: #000;
+}
+.carousel-indicators
+{
+    bottom: 0px;
+}
+
+.carousel-indicators li
+{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000\9;
+    background-color: rgba(0,0,0,0);
+    border-radius: 50%;
+}
+.carousel-indicators .active
+{
+    width: 10px;
+    height: 10px;
+    margin: 0;
+}
+.carousel-caption
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-dialog {
+width:70%;
+margin: 5% auto;
+}
+
+
+/* ===================================
+8. Reviews
+==================================== */
+
+.review-area {
+    background: #F7F7F7;
+}
+
+.review-list {}
+
+.single-review h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    -webkit-transition: .3s;
+    transition: .3s;
+    color: #232323;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.single-review h3 {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.single-review p {
+    line-height: 25px;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: 5px 7px;
+    border-radius: 20px;
+    background: #000;
+}
+
+/* ===================================
+9. Contact me
+==================================== */
 
 .contact-me-area {
   background: #fff;
@@ -516,7 +771,7 @@ fieldset {
     padding: 5px 10px;
     font-size: 16px;
     line-height: 1.42857143;
-    color: #333;
+    color: #3e4444;
     background-color: #F7F7F7;
     background-image: none;
     border-radius: 0px;
@@ -525,7 +780,7 @@ fieldset {
 }
 
 .form-control:focus {
-    border: 1px solid #000;
+    border: 1px solid #3e4444;
     outline: 0;
     box-shadow: none;
 }
@@ -533,22 +788,21 @@ fieldset {
 .contact-form button.btn {
     display: inline-block;
     color: #fff;
-    background: none;
+    background: #3e4444;
     padding: 15px 25px;
-    border: 1px solid #333;
+    border: 1px solid #3e4444;
     font-size: 14px;
     font-weight: 500;
     -webkit-transition: .3s;
     transition: .3s;
-    background: #232323;
     text-transform: capitalize;
     border-radius: 30px;
 }
 
 .contact-form button.btn:hover {
     background: transparent;
-    border: 1px solid #000;
-    color: #000;
+    border: 1px solid #3e4444;
+    color: #ff7b25;
     -webkit-transition: all 0.4s;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
@@ -570,14 +824,14 @@ fieldset {
     border: 1px solid #ff0000;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* FOOTER CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+
+/* ===================================
+10. Footer
+==================================== */
 
 .footer-area {
-    background: #F7F7F7;
+    background: #3e4444;
+    color: #fff;
     padding: 40px 0px;
     margin: 20px 0 0;
     min-height: 150px;
@@ -588,24 +842,18 @@ fieldset {
 }
 
 .footer-area p {
-    margin-bottom: 0;
-    color: #333030;
     margin-bottom: 20px;
     text-align: justify;
 }
 
-footer .copyright{
+.footer-area .copyright{
    text-align: center;
    margin: 10px 0 0;
 }
 
-
-/*
-* ----------------------------------------------------------------------------------------
-* QUOTE CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
+/* ===================================
+11. Footer quote
+==================================== */
 
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
 @import url(https://fonts.googleapis.com/css?family=Sanchez:400italic,400);
@@ -615,7 +863,7 @@ footer .copyright{
   font-family: 'Sanchez', serif;
   font-size: 18px;
   line-height: 1.5em;
-  color: #3d748f;
+  color: #82b74b;
 }
 .quote footer {
   font-family: 'Noto Sans', sans-serif;
@@ -639,11 +887,161 @@ footer .copyright{
   z-index: 1;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* LINE-HEADING CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+
+/* ===================================
+12. Social links
+==================================== */
+
+.social ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.social ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.social ul li:first-child {
+  margin-left: 0;
+}
+
+.social ul li a {
+  color: #fafafa;
+  display: block;
+  padding: 5px;
+  font-size: 20px;
+  -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
+  -o-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
+  transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
+}
+
+.social ul li a:hover {
+  color: #fff;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+
+/* ===============================
+13. Aside, sidebar
+================================ */
+
+aside{
+	position:relative;
+	overflow: hidden;
+}
+
+.sidebar-nav{
+	float:left;
+	width:100%;
+}
+
+.right-sidebar{
+	border-left:1px solid #f5f5f5;
+	padding:0 0 0 30px;
+-webkit-box-shadow:inset 1px 0 0 0 rgba(0,0,0,.01);
+box-shadow:inset 1px 0 0 0 rgba(0,0,0,.01);
+
+}
+
+.left-sidebar{
+	border-right:1px solid #f5f5f5;
+	padding:0 30px 0 0;
+-webkit-box-shadow:inset 1px 0 0 0 rgba(0,0,0,.01);
+box-shadow:inset 1px 0 0 0 rgba(0,0,0,.01);
+}
+
+.left-sidebar .widget h3, .left-sidebar .widget .widget-content{
+	padding-right:20px;
+}
+
+aside .widget {
+	margin-bottom:40px;
+}
+
+.widget input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #333;
+    border-radius: 0;
+    box-shadow: none;
+    color: #e3e8f0;
+    height: 50px;
+    float: left;
+}
+
+.widget input:hover,
+.widget input:focus {
+    border: 1px solid #333;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.widget button {
+    background: #333 none repeat scroll 0 0;
+    border: 1px solid #333;
+    color: #fff;
+    height: 42px;
+    padding: 0 32px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.widget button:hover {
+    background: transparent;
+    color: #ff7b25;
+    border: 1px solid #333;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+aside .widgetheading {
+	position: relative;
+	text-transform: capitalize;
+	border-bottom: #e9e9e9 1px solid;
+	padding-bottom: 9px;
+	margin-bottom: 15px;
+    margin-top: 0
+}
+
+.widget p {
+    margin-top: 15px;
+    text-align: justify;
+}
+aside .widget .widgetheading span {
+	position: absolute;
+	width: 60px;
+	height: 1px;
+	bottom: -1px;
+	right:0;
+}
+
+ul.cat li, ul.recent li {
+	margin:0 0 15px 0;
+	list-style:none;
+}
+
+ul.cat li a, ul.recent li a{
+	color: #767676;
+	display: block;
+	font-size: 14px;
+}
+
+ul.cat li a:hover, ul.recent li a:hover {
+    color: #ff7b25;
+}
+
+ul.cat li a span {
+    float: right;
+}
+
+
+/* ===================================
+14. Line heading
+==================================== */
 
 .line-heading .line-heading-title {
   position: relative;
@@ -685,289 +1083,3 @@ footer .copyright{
   background-color: #515151;
 }
 
-
-/* ===================================
-1. Social links
-==================================== */
-
-.social ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.social ul li {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.social ul li:first-child {
-  margin-left: 0;
-}
-
-.social ul li a {
-  color: #515151;
-  display: block;
-  padding: 5px;
-  font-size: 20px;
-  -webkit-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
-  -o-transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
-  transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
-}
-
-.social ul li a:hover {
-  color: #333030;
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-.header-links ul li a {
-    color: #fafafa;
-}
-
-.header-links ul li a:hover{
-   color: #ffffff;
-}
-
-
-/*
-* ----------------------------------------------------------------------------------------
-*  CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.header-image {
-  width: 300px;
-  margin: 0 auto 30px;
-  float: none;
-}
-
-.round-img {
-  border-radius:50%;
-  -webkit-border-radius: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-/* Small Devices, Tablets */
-@media only screen and (max-width: 992px){
-  .about-image {
-    display: none;
-  }
-
-  .section-title {
-    margin-bottom: 10px;
-  }
-}
-
-/*
-* ----------------------------------------------------------------------------------------
-* PROJECT CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.project-area {
-    background: #F7F7F7;
-}
-
-
-
-.box {
-  background: #fff;
-  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-  text-align: justify;
-  padding: 2em;
-  margin: 0 1em 2em;
-}
-
-.box.box-style h3 {
-  margin-bottom: 0.25em;
-}
-
-.box.box-style .image {
-  position: relative;
-  left: 2em;
-  top: 2em;
-  margin: -4em 0 4em -4em;
-  width: auto;
-}
-
-.box a:hover{
-  color: #000;
-}
-
-.image {
-  display: inline-block;
-  position: relative;
-}
-
-.image img {
-  display: block;
-  width: 100%;
-}
-
-.image.featured {
-  display: block;
-  width: 100%;
-  margin: 0 0 2em 0;
-}
-
-.project-btn{
-text-align:center;
-}
-
-
-.project-btn li {
-  display: inline-block;
-  margin: 5px;
-  list-style: none;
-}
-
-.project-btn a {
-  text-decoration: none;
-  color: #263959;
-  display: inline-block;
-  padding: 5px 10px;
-  border: 1px solid #ecf0f1;
-  background-color: #fafafa;
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
-}
-
-.project-btn a:hover {
-  background-color: #ecf0f1;
-}
-
-/*
-* ----------------------------------------------------------------------------------------
-* TESTIMONIAL CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.testimonial-area {
-    background: #F7F7F7;
-}
-
-.testimonial-list {}
-
-.single-testimonial h2 {
-    font-size: 16px;
-    text-transform: uppercase;
-    -webkit-transition: .3s;
-    transition: .3s;
-    color: #232323;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-.single-testimonial h3 {
-    font-size: 14px;
-    text-transform: capitalize;
-    font-weight: 300;
-    margin-top: 0;
-}
-
-.single-testimonial p {
-    line-height: 25px;
-    font-size: 14px;
-}
-
-.owl-theme .owl-controls .owl-page span {
-    display: block;
-    width: 5px;
-    height: 5px;
-    margin: 5px 7px;
-    border-radius: 20px;
-    background: #000;
-}
-
-.error-404{
-  height: 80%;
-  text-align: center;
-  text-transform: capitalize;
-  padding-top: 20%;
-}
-
-
-/*
-* ----------------------------------------------------------------------------------------
-* PROJECT SCREENSHOTS CAROUSEL CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-.carousel-control.left
-{
-    background: none;
-}
-.carousel-control.right
-{
-    background: none;
-}
-
-.carousel-control
-{
-    position: absolute;
-    top: 45%;
-    bottom: 0;
-    left: 0;
-    width: 15%;
-    font-size: auto;
-    color: #fff;
-    text-align: center;
-    opacity: 1;
-    text-shadow: none;
-}
-.carousel-control:hover
-{
-    color: #000;
-}
-.carousel-indicators
-{
-    bottom: 0px;
-}
-.carousel-indicators li
-{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #000\9;
-    background-color: rgba(0,0,0,0);
-    border-radius: 50%;
-}
-.carousel-indicators .active
-{
-    width: 12px;
-    height: 12px;
-    margin: 0;
-}
-.carousel-caption
-{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    color: #fff;
-    text-align: center;
-    background: rgba(0,0,0,0.4);
-}
-
-
-.modal-content  {
-    -webkit-border-radius: 0px !important;
-    -moz-border-radius: 0px !important;
-    border-radius: 0px !important;
-    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-}
-
-.modal-dialog {
-width:70%;
-}

@@ -6,11 +6,14 @@ categories: ['website development','data science']
 tags: ['data science','machie learning','stock analysis']
 published: True # True/False
 images: []
-video:
+video: "V8WGuaXlcl8" # youtube video id
+type: "article"
+author: 'narendra'
+description:
 ---
 
 
-### Installation Quandl python package
+#### Installation Quandl python package
 
 There are two way to install quandl python package.
 
@@ -62,12 +65,12 @@ python setup.py install
 quandl is built on top of multipile python packages, to install via git repo or tar all the dependent packages must be installed else use `pip` installation method to install quandl with dependencies as well.
 
 
-### Authentication
+#### Authentication
 
 The quandl python module is free but you need a Quandl API key in order to download data from quandl data repositories. To get API key, you will need to create a [Quandl account](https://www.quandl.com/users/login) and get API key.
 
 
-### Getting started with Quandl?
+#### Getting started with Quandl?
 
 To start using `quandl` python module you need to import it and need to setup your API key to authenticate.
 
@@ -77,7 +80,7 @@ import quandl
 quandl.ApiConfig.api_key = "YOURAPIKEY"
 ```
 
-### Downloading the data into python
+#### Downloading the data into python
 
 ```python
 import quandl
@@ -107,7 +110,7 @@ data = quandl.get("WIKI/AAPL", rows=5)
 
 ```
 
-### Download an entire time-series dataset
+#### Download an entire time-series dataset
 
 Entire time series data can be downloaded.
 
@@ -123,7 +126,7 @@ database = "ZEA"
 quandl.bulkdownload(database)
 ```
 
-### Preprocess Time series data
+#### Preprocess Time series data
 
 To preprocess data quandl provides some APIs like `collapse` that you can use to group the data according to `daily`, `weekly`, `monthly`, `quarterly`, `annual`
 

@@ -1,6 +1,5 @@
 /* Tablet Layout: 768px. */
-
-@media only screen and (min-width: 767px) and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 992px) {
     .single-project-done {
         text-align: center;
     }
@@ -29,111 +28,93 @@
     }
 
     .header-image {
-    width: 200px;
+        width: 200px;
+    }
+
+    .about-image {
+        display: none;
+    }
+
+    .section-title {
+        margin-bottom: 10px;
+    }
+
+    #pagination, .next-previews-button-design {
+        margin-bottom: 30px;
+    }
+
+    .left-sidebar, .right-sidebar{
+    border: none;
+    }
+
+    .right-sidebar .about-me {
+    display:none;
     }
 }
 
 
 /* Mobile Layout: 320px. */
-
 @media only screen and (max-width: 767px) {
-    .site-header .navbar-collapse {
+
+    .navbar-collapse {
         opacity: 1;
         visibility: visible;
+        background: #3e4444;
     }
+
     .navbar-toggle .icon-bar {
         background: #fff;
     }
+
     .navbar-toggle {
         margin-top: -26px;
         margin-right: 0;
     }
+
     .navbar {
         min-height: 0px;
     }
+
     .mainmenu .navbar-nav li a {
         padding: 11px 15px;
     }
+
     .menu-bg .mainmenu .navbar-nav li a {
         padding: 11px 15px;
     }
+
     .mainmenu .navbar-nav li a:hover {
-        color: #ccc;
+        color: #fff;
     }
-    .navbar-fixed-bottom .navbar-collapse,
-    .navbar-fixed-top .navbar-collapse {
-        max-height: 420px;
-    }
-    .navbar-collapse {
-        background: rgba(0, 0, 0, .9);
-    }
+
     .menu-bg .navbar-collapse {
-        background: rgba(0, 0, 0, .9);
+        background: #3e4444;
     }
-    .welcome-image-area,
-    .welcome-video-area {
+
+    .welcome-image-area
+    {
         padding-top: 120px;
     }
-    .welcome-image-area h2,
-    .single-slide-item h2,
-    .welcome-video-area h2 {
-        font-size: 20px;
+
+    .home-arrow-down {
+        bottom: -200px;
     }
-    .header-text h1 {
-        font-size: 30px;
+
+    .section-title {
+        margin-bottom: 20px;
     }
+
     .section-title h2 {
         font-size: 30px;
     }
-    .single-project-complete h2 {
-        font-size: 40px;
-    }
-    .single-testimonial p {
-        padding: 0 10px;
-    }
-    .single-project-done {
-        text-align: center;
-    }
-    .footer-area p,
-    .actions,
-    .footer-social-link {
-        text-align: center;
-    }
-    .header-text p {
-        font-size: 16px;
-        padding: 0;
-        line-height: 28px;
-    }
-    .header-text .home-arrow-down {
-        bottom: -90px;
+
+    .about-me-area {
+        height: auto;
     }
 
-    .header-image {
-    width: 200px;
-    }
-
-
-    .single-project-complete {
-        margin-bottom: 50px;
-    }
-    .single-contact-details i {
-        margin-bottom: 20px;
-    }
-    .single-service,
-    .single-blog {
-        margin-bottom: 30px;
-    }
-    #map {
-        margin-top: 20px;
-    }
-    .item .grid figure,
-    .work .grid figure {
-        min-width: 100%;
-    }
     .about-text {
-        padding-top: 30px;
+        padding-top: 0px;
     }
-
 
     .about-text h3 {
         margin-bottom: 20px;
@@ -142,8 +123,37 @@
     .about-text ul li {
         width: 100%;
     }
-    .single-service i {
-        margin-bottom: 105px;
+
+    .about-image{
+        display:none;
     }
 
+    .footer-area p,
+    .footer-social-link {
+        text-align: center;
+    }
+
+    .copyright{
+    display: none;
+    }
+
+    .single-blog-post a h1{
+    font-size:24px;
+    }
+
+    .section-title {
+        margin-bottom: 10px;
+    }
+
+    #pagination, .next-previews-button-design {
+        margin-bottom: 30px;
+    }
+
+    .left-sidebar, .right-sidebar{
+    border: none;
+    }
+
+    .right-sidebar .about-me {
+    display:none;
+    }
 }

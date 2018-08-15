@@ -7,10 +7,28 @@ layout: page
 	<div class="row">
 		<div class="col-md-7 col-md-offset-1 col-sm-10 col-sm-offset-1">
 			<div class="single-blog-post-details wow fadeInDown" data-wow-delay="0.2s">
-			    {% if page.img %}
-				<img class="img-responsive" src={{ "/assets/img/post/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
-			    {% endif %}
-				<h2 class="page-title">{{page.title}}</h2>
+
+				{% if page.video %}
+					<div class="video-area">
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe width="800" height="500" src="https://www.youtube.com/embed/{{ page.video }}?rel=0&amp;controls=0&amp;showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				{% else %}
+					{% if page.images.size == 1 %}
+					{% assign img = page.images | first %}
+					<img src='{{"/assets/img/post/" | prepend: site.baseurl | append : img }}' class="img-responsive" alt="{{ page.title }}" />
+					{% else %}
+					<div class="blog-slider">
+						{% for img in page.images %}
+						<div class="single-blog-slider">
+							<img src='{{"/assets/img/post/" | prepend: site.baseurl | append : img }}' class="img-responsive" alt="{{ page.title }}" />
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				{% endif %}
+				<h1 class="page-title">{{page.title}}</h1>
 				<div class="post-date">
 					{% if page.date %}
 					<span><i class="fa fa-calendar"></i>{{page.date | date: '%d,%b %Y'}}</span>
@@ -21,7 +39,7 @@ layout: page
 				</div>
 				{{content | markdownify}}
 				{% if page.tags %}
-				<h2>Tags</h2>
+				<h3>Tags</h3>
 				<div class="tag">
 					{% for tag in page.tags %}
 					<a href="{{site.baseurl}}/tags#{{tag}}">{{tag}}</a>
@@ -29,19 +47,18 @@ layout: page
 				</div>
 				{% endif %}
 
-				<div class="single-blog-social-icon">
+				<!--div class="single-blog-social-icon">
 					<div class="twitter"><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a></div>
 					<div class="facebook"><a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a></div>
 					<div class="google-plus"><a class="google-plus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank">Google+</a></div>
-				</div>
-
+				</div-->
 
 				<div class="next-previews-button-design">
 					{% if page.previous.url %}
-					<a class="pull-left" href="{{page.previous.url}}"><i class="fa fa-chevron-left"></i> {{page.previous.title}}</a>
+					<a class="pull-left" href="{{ page.previous.url }}"><i class="fa fa-chevron-left"></i> {{ page.previous.title }}</a>
 					{% endif %}
 					{% if page.next.url %}
-					<a class="pull-right" href="{{page.next.url}}">{{page.next.title}} <i class="fa fa-chevron-right"></i></a>
+					<a class="pull-right" href="{{ page.next.url }}">{{ page.next.title }} <i class="fa fa-chevron-right"></i></a>
 					{% endif %}
 				</div>
 
@@ -54,7 +71,7 @@ layout: page
 		<!-- / EMD BLOG SIDEBAR DESIGN AREA -->
 	</div>
 </div>
-
+</section>
 
 
 

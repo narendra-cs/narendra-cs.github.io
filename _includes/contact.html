@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form id="contactForm" class="contact-form" action="https://formspree.io/{{site.email}}" method="post">
+                <form id="contactForm" class="contact-form" action="{{ 'https://formspree.io/' | append: site.data.author.Email }}" method="post">
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input id="name" class="form-control" type="text" name="name" placeholder="Name" required>
@@ -24,7 +24,7 @@
                         <div class="col-md-12 form-group">
                             <textarea id="message" class="form-control" name="message" placeholder="Message" rows="4" required></textarea>
                         </div>
-                        <input type="hidden" name="_next" value="{{ site.url }}" />
+                        <input type="hidden" name="_next" value="{{ '#contact?t=1' | prepend: site.baseurl | prepend: site.url }}" />
                         <input type="text" name="_gotcha" style="display:none" />
                         <div class="col-md-12 text-center">
                             <button class="btn" type="submit">Submit Now</button>

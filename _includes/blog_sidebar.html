@@ -1,53 +1,53 @@
-			<div class="single-blog-sidebar-area">
+<aside class="right-sidebar">
 
-                <!-- search button -->
-                <!--div class="single-side-bar">
-					<h2>Search</h2>
-					<input type="text" class="form-control" placeholder="Search">
-					<button>Search</button>
-				</div-->
+		<!-- search button -->
+		<!--div class="widget">
+			<h5 class="widgetheading">Search</h5>
+			<input type="text" class="form-control" placeholder="Search">
+			<button>Search</button>
+		</div-->
 
-                <!-- About Me -->
-				<div class="single-side-bar">
-					<h2>about me</h2>
-                    {% if site.author-img %}
-					<img src="{{ '/assets/img/authors/' | prepend: site.baseurl | append: site.author-img }}" alt="{{site.author}}">
-					{% endif %}
-                    <p>I'm a {{site.author-title}}, {{site.about-author | truncatewords: 30 }}</p>
-				</div>
+		<!-- About Me -->
+		<div class="widget about-me">
+			<h5 class="widgetheading">about me</h5>
+			{% if site.data.author.Image %}
+			<img src="{{ '/assets/img/authors/' | prepend: site.baseurl | append: site.data.author.Image }}" alt="{{ site.data.author.Name }}">
+			{% endif %}
+			<p>I'm a {{ site.data.author.Title}}, {{ site.data.author.About | truncatewords: 30 }}</p>
+		</div>
 
-				<!-- Recent Post -->
-				<div class="single-side-bar">
-					<h2>Recent Posts</h2>
-					<ul>
-						{% for post in site.posts limit:10 %}
-						<li><a href="{{ post.url | prepend: site.baseurl }}">- {{post.title}}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
+		<!-- Recent Post -->
+		<div class="widget">
+			<h5 class="widgetheading">Recent Posts</h5>
+			<ul class="recent">
+				{% for post in site.posts limit:10 %}
+				<li><a href="{{ post.url | prepend: site.baseurl }}">- {{post.title}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
 
-				<!-- Category Lists -->
-				<!--div class="single-side-bar">
-					<h2>Catagory lists</h2>
-					<ul>
-						<li><a href="#"> Business planning <span>(5)</span></a></li>
-						<li><a href="#"> CMS Web Templates <span>(3)</span></a></li>
-						<li><a href="#"> Html Templates <span>(6)</span></a></li>
-						<li><a href="#"> Graphics Design <span>(4)</span></a></li>
-						<li><a href="#"> WordPress <span>(8)</span></a></li>
-					</ul>
-				</div-->
+		<!-- Category Lists -->
+		<!--div class="widget">
+			<h5 class="widgetheading">Catagory lists</h5>
+			<ul class="cat">
+				<li><a href="#"> Business planning <span>(5)</span></a></li>
+				<li><a href="#"> CMS Web Templates <span>(3)</span></a></li>
+				<li><a href="#"> Html Templates <span>(6)</span></a></li>
+				<li><a href="#"> Graphics Design <span>(4)</span></a></li>
+				<li><a href="#"> WordPress <span>(8)</span></a></li>
+			</ul>
+		</div-->
 
-				<!-- Tags -->
-				<!--div class="single-side-bar">
-					<h2>Tags</h2>
-					<div class="tag">
-						<a href="#">Web design</a>
-						<a href="#">Web Development</a>
-						<a href="#">Accounting</a>
-						<a href="#">Taxation</a>
-						<a href="#">Retirement</a>
-						<a href="#">Financial planning</a>
-					</div>
-				</div-->
-			</div>
+		<!-- Tags -->
+		<!--div class="widget">
+			<h5 class="widgetheading">Tags</h5>
+			<ul class="tag">
+				<li><a href="#">Web design</a></li>
+				<li><a href="#">Web Development</a></li>
+				<li><a href="#">Accounting</a></li>
+				<li><a href="#">Taxation</a></li>
+				<li><a href="#">Retirement</a></li>
+				<li><a href="#">Financial planning</a></li>
+			</ul>
+		</div-->
+</aside>

@@ -3,20 +3,19 @@
 	    <div class="row">
 		<div class="col-sm-5">
 		<blockquote class="quote">
-	    If you Torture the data long enough, it will confess.<br>
-	    <footer>Ronald Coase</footer>
+	    {{ site.data.author.quote }}<br>
+	    <footer>{{ site.data.author.quote_author_name }}</footer>
   		</blockquote>
 		</div> 
 		<div class="col-sm-4" >
 		<p>If you like what you see here, over my blog or GitHub repositories, let's talk. I'd love to hear from you.</p>
 		</div>
 		<div class="col-sm-3">
-			<div class="line-heading">
-	      			<!--h3 class="line-heading-title contact-title">Contact me</h3-->
+			<div class="line-heading footer-social-link">
 				{% include social.html %}
 			</div>
 			<div class="copyright">
-				{{site.time | date: '%Y'}} &copy; {{site.author}}
+				{{site.time | date: '%Y'}} &copy; {{site.data.author.Name}}
 			</div>
 		</div>
 	    </div>

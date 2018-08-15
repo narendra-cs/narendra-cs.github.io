@@ -7,29 +7,28 @@
 
 # Site settings
 
-author: Narendra Singh
-author-img: narendra-singh.jpg
-email: narendra.cs.biet@gmail.com
-author-title: Data Enthusiast
-about-author: > # ignore newlines until next property
-      Who is always on the hunt of opportunities in the field of Data Science, 
-      which allow me to leverage my core competencies in Machine Learning, 
-      Big Data processing, Inferential Statistics and Strategic Decision Making, 
-      in order to provide insights that help business to grow. I have 1+ year 
-      of working experience on hadoop to extract data from various sources, 
-      transform it and load it into hadoop. I am also having working experience on hybrid High Performance Computing 
-      cluster, having 400+ nodes at IIT Delhi.
+#author: Narendra Singh
+#author-img: narendra-singh.jpg
+#email: narendra.cs.biet@gmail.com
+#author-title: Data Enthusiast
+#about-author: > # ignore newlines until next property
+#      Who is always on the hunt of opportunities in the field of Data Science,
+#     which allow me to leverage my core competencies in Machine Learning,
+#      Big Data processing, Inferential Statistics and Strategic Decision Making,
+#      in order to provide insights that help business to grow. I have 1+ year
+#      of working experience on hadoop to extract data from various sources,
+#      transform it and load it into hadoop. I am also having working experience on hybrid High Performance Computing
+#      cluster, having 400+ nodes at IIT Delhi.
 
-skills:
-  - Data Analytics / Data Science
-  - Machine Learning
-  - Hadoop
-  - Spark
-  - Python
-  - R
-  - Statistics
-  - High Performance Computing
-
+#skills:
+#  - Data Analytics / Data Science
+#  - Machine Learning
+#  - Hadoop
+# - Spark
+#  - Python
+#  - R
+#  - Statistics
+#  - High Performance Computing
 
 url: "https://narendrasingh.in" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -39,6 +38,7 @@ description: > # this means to ignore newlines until next property
 
 # CDN URL
 cdn_url: "https://cdnjs.cloudflare.com/ajax/libs"
+google_font_url: "https://fonts.googleapis.com"
 
 # Build settings
 markdown: kramdown
@@ -51,4 +51,4 @@ plugins:
 paginate: 5
 paginate_path: "/blog/page/:num"
 
-error-404-msg: Error 404 Page Not Found
+error-404-msg: "Error: 404 Page Not Found"

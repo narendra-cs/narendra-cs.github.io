@@ -1,54 +1,40 @@
+/* ===================================
+1. Blog thumbnail
+2. Pagination
+3. Blog detail
+4. Tags
+==================================== */
+
+
+/* ===================================
+1. Blog thumbnail
+==================================== */
 
 .blog-page-design-area {
     padding-top: 100px;
-    /*padding-bottom: 100px;*/
-}
-
-
-.post-border-top {
-	border-top: #e9e9e9 1px solid;
-	padding-top: 20px;
-	margin-top: 20px;
-}
-
-.post-border-bottom {
-	border-bottom: #e9e9e9 1px solid;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
 }
 
 .single-blog-post {
     margin-bottom: 50px;
 }
 
-.single-blog-post h2 {
-    font-size: 22px;
-}
-
-.single-blog-post a.read-more {
-    background: #000;
-    color: #fff;
-    padding: 6px 20px;
-    border: 1px solid #000;
-}
-
-.single-blog-post a.read-more:hover {
-    background: transparent;
-    color: #000;
-    border: 1px solid #000;
-}
-
 .post-date {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .post-date span {
     margin-right: 20px;
+    text-transform: capitalize;
+    color: #3e4444;
 }
 
 .post-date span i {
     margin-right: 5px;
     color: #333;
+}
+
+.single-blog-post a h1{
+    font-size:24px;
 }
 
 .single-blog-post p {
@@ -57,30 +43,30 @@
     text-align: justify;
 }
 
-.blog-carosel-control {
-    position: absolute;
-    top: 50%;
-    color: #000;
-    font-size: 30px;
-    margin-top: -50px;
-    background: #333;
-    height: 100px;
-    width: 25px;
-    text-align: center;
-    line-height: 99px;
+.single-blog-post a.read-more {
+    background: #3e4444;
+    color: #fff;
+    padding: 6px 20px;
+    border: 1px solid #3e4444;
 }
 
-.blog-carosel-control.right {
-    right: 0px;
-    left: auto;
+.single-blog-post a.read-more:hover {
+    background: transparent;
+    color: #ff7b25;
+    border: 1px solid #3e4444;
 }
+
+
+/* ===================================
+2. Pagination
+==================================== */
 
 .pagination {
     margin: 0;
 }
 
 ul.blog_pagination li a {
-    border: 1px solid #e8e8e9;
+    border: 1px solid #3e4444;
     border-radius: 0 !important;
     color: #353535;
     font-family: roboto, sans-serif;
@@ -93,91 +79,81 @@ ul.blog_pagination li a {
 
 
 .black-icon {
-    background: #333 none repeat scroll 0 0 !important;
+    background: #3e4444 none repeat scroll 0 0 !important;
     color: #fff !important;
 }
 
 .black-icon:hover {
-    background: #333 !important;
+    background: #3e4444 !important;
 }
 
 .black-icon i {
     font-size: 14px;
 }
 
-ul.blog_pagination li a:hover {
+
+ul.blog_pagination li a:hover,ul.blog_pagination li a.active {
     color: #fff;
-    background: #333;
-    border: 1px solid #333;
+    background: #3e4444;
+    border: 1px solid #3e4444;
 }
 
-.single-side-bar {
-    margin-bottom: 40px;
+
+/* ===================================
+3. Blog detail
+==================================== */
+
+.single-blog-post-details p {
+    text-align: justify;
+}
+
+.single-blog-post-details blockquote {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.next-previews-button-design {
+    margin-top: 40px;
     overflow: hidden;
 }
 
-.single-side-bar h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    margin-top: 0;
-    text-transform: capitalize;
-}
-
-.single-side-bar input {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #333;
-    border-radius: 0;
-    box-shadow: none;
-    color: #e3e8f0;
-    height: 50px;
-    float: left;
-}
-
-.single-side-bar input:hover,
-.single-side-bar input:focus {
-    border: 1px solid #333;
-    box-shadow: none;
-    outline: 0 none;
-}
-
-.single-side-bar button {
-    background: #333 none repeat scroll 0 0;
-    border: 1px solid #333;
-    color: #fff;
-    height: 42px;
-    padding: 0 32px;
-    -webkit-transition: .3s;
-    transition: .3s;
-}
-
-.single-side-bar button:hover {
-    background: transparent;
+.next-previews-button-design a {
     color: #000;
-    border: 1px solid #333;
-    -webkit-transition: .3s;
-    transition: .3s;
 }
 
-.single-side-bar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.next-previews-button-design a:hover {
+    color: #ff7b25;
 }
 
-.single-side-bar ul li a {
+/* ===================================
+4. Tags
+==================================== */
+
+.tag {
+    overflow: hidden;
+}
+
+.tag a {
     color: #767676;
-    display: block;
-    font-size: 14px;
-    padding: 5px 0;
+    float: left;
+    font-size: 12px;
+    text-transform: capitalize;
+    margin: 5px 7px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    padding: 5px 8px;
+    border: 1px solid #333;
 }
 
-.single-side-bar ul li a span {
-    float: right;
+.tag a:hover {
+    color: #ff7b25;
+    border: 1px solid #333;
+    background: transparent;
 }
 
-.single-side-bar ul li a:hover {
-    color: #333
-}
+/* ===================================
+5. Blog Social icon
+==================================== */
 
 .single-blog-social-icon {
     overflow: hidden;
@@ -213,51 +189,4 @@ ul.blog_pagination li a:hover {
     color: #CB1D1F;
 }
 
-.tag {
-    overflow: hidden;
-}
 
-.tag a {
-    color: #000;
-    float: left;
-    font-size: 14px;
-    font-weight: 300;
-    margin: 5px 7px;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    padding: 5px 8px;
-    border: 1px solid #333;
-}
-
-.tag a:hover {
-    color: #000;
-    border: 1px solid #333;
-    background: transparent;
-}
-
-.single-blog-post-details blockquote {
-    font-size: 16px;
-    line-height: 28px;
-}
-
-.next-previews-button-design {
-    margin-top: 40px;
-    overflow: hidden;
-}
-
-.next-previews-button-design a {
-    color: #000;
-}
-
-.owl-theme .owl-controls .owl-page span {
-    display: block;
-    width: 6px;
-    height: 6px;
-    margin: 5px 7px;
-    filter: Alpha(Opacity=50);
-    opacity: 0.5;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    background: #000;
-}
