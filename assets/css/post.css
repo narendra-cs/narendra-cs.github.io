@@ -105,11 +105,25 @@ ul.blog_pagination li a:hover,ul.blog_pagination li a.active {
 
 .single-blog-post-details p {
     text-align: justify;
+    margin-bottom: 10px;
+}
+
+.single-blog-post-details h3 {
+    margin-top: 40px;
+}
+
+.single-blog-post-details h4 {
+    margin-top: 20px;
 }
 
 .single-blog-post-details blockquote {
     font-size: 16px;
     line-height: 30px;
+}
+
+.single-blog-post-details ul, .single-blog-post-details  li{
+    padding: 5px 10px 10px;
+    list-style: initial;
 }
 
 .next-previews-button-design {

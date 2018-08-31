@@ -22,17 +22,22 @@
     #map {
         margin-top: 20px;
     }
-     .about-text {
-        padding-top: 0px;
-        margin-top: 30px;
-    }
 
     .header-image {
         width: 200px;
     }
 
+    .about-text {
+        padding-top: 0px;
+        margin-top: 30px;
+    }
+
     .about-image {
         display: none;
+    }
+
+    .modal-dialog {
+        width:90%;
     }
 
     .section-title {
@@ -96,6 +101,10 @@
         padding-top: 120px;
     }
 
+    .header-image {
+        width: 200px;
+    }
+
     .home-arrow-down {
         bottom: -200px;
     }
@@ -126,6 +135,10 @@
 
     .about-image{
         display:none;
+    }
+
+    .modal-dialog {
+        width:90%;
     }
 
     .footer-area p,
