@@ -8,8 +8,12 @@ published: True
 images: ['p1_main.png']
 type: "article"
 author: "Narendra Singh"
-description: "Release of Hadoop 3 has came with many advance enhancement over previous hadoop i.e. hadoop-2 . The Hadoop framework is at the core of the entire Hadoop ecosystem, and various other libraries strongly depend on it. So here is a article to install latest hadoop 3.x on linux ubuntu machine. "
+description: "Hadoop 3 has came up with many advance enhancement over previous version of hadoop i.e. hadoop-2. The Hadoop framework is at the core of the entire Hadoop ecosystem, and various other libraries strongly depend on it. To play with Hadoop, you may first want to install it on a single machine, So here is a article to install latest hadoop 3.x on linux ubuntu machine. "
 ---
+
+
+Hadoop 3 has came up with many advance enhancement over previous version of hadoop i.e. hadoop-2. The Hadoop framework is at the core of the entire Hadoop ecosystem, and various other libraries strongly depend on it. To play with Hadoop, you may first want to install it on a single machine, So here is a article to install latest hadoop 3.x on linux ubuntu machine. 
+
 
 
 > In this article, We will discuss about to steup our own hadoop single node cluster. Follow article step by step and enjoy working on newely updated hadoop framework for big data analytics and storage.
@@ -156,6 +160,18 @@ $ java -version
 
 ### Apache Hadoop Installation and Configuration in Pseudo distribued mode
 
+Apache Hadoop is framework that allows distributed processing of large amount of data sets across cluster of computers using simple programming models. Hadoop cluster is highly scalable from single node to thousands of nodes. each of node offering storage and local computation. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures. 
+
+<br/>
+Apache Hadoop supports three different modes of installation :
+
+__Local (Standalone) Mode:__ By default, Hadoop is configured to run in a non-distributed mode, as a single Java process.
+
+__Pseudo-Distributed Mode:__ Hadoop can also be run on a single-node in a pseudo-distributed mode where each Hadoop daemon runs in a separate Java process.
+
+__Fully-Distributed Mode:__ Hadoop cluster in Fully-distributed mode is typically uses multiple machines as culster. Hadrware are devided according to functions of hadoop framework. Typically one machine in the cluster is designated as the NameNode and another machine as the ResourceManager, exclusively. These are the masters. Other services (such as Web App Proxy Server and MapReduce Job History server) are usually run either on dedicated hardware or on shared infrastructure, depending upon the load.
+
+
 * Download apache hadoop tar 
 
 ```sh
@@ -253,188 +269,183 @@ export HADOOP_SECURITY_LOGGER=INFO,NullAppender
 * Edit `core-site.xml` in `$HADOOP_CONF_DIR` (Place following between `<configuration> </configuration>`)
 
 ```
-	<property>
-	<name>fs.defaultFS</name>
-	<value>hdfs://nn.example.com:9000</value>
-	</property>
+<property>
+<name>fs.defaultFS</name>
+<value>hdfs://nn.example.com:9000</value>
+</property>
 
-	<property>
-	<name>io.file.buffer.size</name>
-	<value>131072</value>
-	</property>
+<property>
+<name>io.file.buffer.size</name>
+<value>131072</value>
+</property>
 ```
 ![core-site.xml]({{site.baseurl}}/assets/img/post/p1_core-site-xml.png)
 
 * Edit `hdfs-site.xml` in `$HADOOP_CONF_DIR` (Place following between `<configuration> </configuration>`)
 
 ```
-	<property>
-	<name>dfs.namenode.name.dir</name>
-	<value>file:/home/hdfs/namenode</value>
-	</property>
+<property>
+<name>dfs.namenode.name.dir</name>
+<value>file:///home/hdfs/namenode</value>
+</property>
 
-	<property>
-	<name>dfs.datanode.data.dir</name>
-	<value>file:/home/hdfs/datanode</value>
-	</property>
+<property>
+<name>dfs.datanode.data.dir</name>
+<value>file:///home/hdfs/datanode</value>
+</property>
 
-	<property>
-	<name>dfs.namenode.checkpoint.dir</name>
-	<value>file:/home/hdfs/secondarynamenode</value>
-	</property>
+<property>
+<name>dfs.namenode.checkpoint.dir</name>
+<value>file:///home/hdfs/secondarynamenode</value>
+</property>
 
-	<property>
-	<name>dfs.replication</name>
-	<value>1</value>
-	</property>
+<property>
+<name>dfs.replication</name>
+<value>1</value>
+</property>
 
-	<property>
-	<name>dfs.blocksize</name>
-	<value>128m</value>
-	</property>
+<property>
+<name>dfs.blocksize</name>
+<value>128m</value>
+</property>
 
-	<property>
-	<name>Dfs.datanode.data.dir.perm</name>
-	<value>700</value>
-	</property>
+<property>
+<name>Dfs.datanode.data.dir.perm</name>
+<value>700</value>
+</property>
 
-	<property>
-	<name>dfs.permissions.enabled</name>
-	<value>true</value>
-	</property>
+<property>
+<name>dfs.permissions.enabled</name>
+<value>true</value>
+</property>
 ```
 
-9. Edit `mapred-site.xml` in `$HADOOP_CONF_DIR` (Place following between `<configuration> </configuration>`)
+* Edit `mapred-site.xml` in `$HADOOP_CONF_DIR` (Place following between `<configuration> </configuration>`)
 
 ```
-	<property>
-	<name>mapreduce.framework.name</name>
-	<value>yarn</value>
-	</property>
+<property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
 
-	<property>
-	<name>yarn.app.mapreduce.am.staging-dir</name>
-	<value>/tmp/hadoop-yarn/staging</value>
-	</property>
+<property>
+<name>yarn.app.mapreduce.am.staging-dir</name>
+<value>/tmp/hadoop-yarn/staging</value>
+</property>
 
-	<property>
-	<name>mapreduce.am.max-attempts</name>
-	<value>2</value>
-	</property>
+<property>
+<name>mapreduce.am.max-attempts</name>
+<value>2</value>
+</property>
 
-        <property>
-        <name>yarn.app.mapreduce.am.env</name>
-        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
-        </property>
+<property>
+<name>yarn.app.mapreduce.am.env</name>
+<value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+</property>
 
-        <property>
-        <name>mapreduce.map.env</name>
-        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
-        </property>
+<property>
+<name>mapreduce.map.env</name>
+<value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+</property>
 
-        <property>
-        <name>mapreduce.reduce.env</name>
-        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
-        </property>
+<property>
+<name>mapreduce.reduce.env</name>
+<value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+</property>
 
-        <property>
-        <name>mapreduce.application.classpath</name>
-        <value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/common/*,$HADOOP_MAPRED_HOME/share/hadoop/common/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/yarn/*,$HADOOP_MAPRED_HOME/share/hadoop/yarn/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/hdfs/*,$HADOOP_MAPRED_HOME/share/hadoop/hdfs/lib/*</value>
-        </property>
+<property>
+<name>mapreduce.application.classpath</name>
+<value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/common/*,$HADOOP_MAPRED_HOME/share/hadoop/common/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/yarn/*,$HADOOP_MAPRED_HOME/share/hadoop/yarn/lib/*,$HADOOP_MAPRED_HOME/share/hadoop/hdfs/*,$HADOOP_MAPRED_HOME/share/hadoop/hdfs/lib/*</value>
+</property>
 
-	<property>
-	<name>mapreduce.jobhistory.address</name>
-	<value>nn.example.com:10020</value>
-	</property>
+<property>
+<name>mapreduce.jobhistory.address</name>
+<value>nn.example.com:10020</value>
+</property>
 
-	<property>
-	<name>mapreduce.jobhistory.webapp.address</name>
-	<value>nn.example.com:19888</value>
-	</property>
+<property>
+<name>mapreduce.jobhistory.webapp.address</name>
+<value>nn.example.com:19888</value>
+</property>
 
-	<property>
-	<name>mapreduce.jobhistory.intermediate-done-dir</name>
-	<value>/mr-history/tmp</value>
-	</property>
+<property>
+<name>mapreduce.jobhistory.intermediate-done-dir</name>
+<value>/mr-history/tmp</value>
+</property>
 
-	<property>
-	<name>mapreduce.jobhistory.done-dir</name>
-	<value>/mr-history/done</value>
-	</property>
+<property>
+<name>mapreduce.jobhistory.done-dir</name>
+<value>/mr-history/done</value>
+</property>
 ```
 
 * Edit `yarn-site.xml` in `$HADOOP_CONF_DIR`
 
 ```
-	<property>
-	<name>yarn.resourcemanager.hostname</name>
-	<value>nn.example.com</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.hostname</name>
+<value>nn.example.com</value>
+</property>
 
-	<property>
-	<name>yarn.resourcemanager.address</name>
-	<value>${yarn.resourcemanager.hostname}:8032</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.address</name>
+<value>${yarn.resourcemanager.hostname}:8032</value>
+</property>
 
-	<property>
-	<name>yarn.resourcemanager.scheduler.address</name>
-	<value>${yarn.resourcemanager.hostname}:8030</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.scheduler.address</name>
+<value>${yarn.resourcemanager.hostname}:8030</value>
+</property>
 
-	<property>
-	<name>yarn.resourcemanager.webapp.address</name>
-	<value>${yarn.resourcemanager.hostname}:8088</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.webapp.address</name>
+<value>${yarn.resourcemanager.hostname}:8088</value>
+</property>
 
-	<property>
-	<name>yarn.resourcemanager.webapp.https.address</name>
-	<value>${yarn.resourcemanager.hostname}:8090</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.webapp.https.address</name>
+<value>${yarn.resourcemanager.hostname}:8090</value>
+</property>
 
-	<property>
-	<name>yarn.resourcemanager.resource-tracker.address</name>
-	<value>${yarn.resourcemanager.hostname}:8031</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.resource-tracker.address</name>
+<value>${yarn.resourcemanager.hostname}:8031</value>
+</property>
 
-	<property>
-	<name>yarn.resourcemanager.admin.address</name>
-	<value>${yarn.resourcemanager.hostname}:8033</value>
-	</property>
+<property>
+<name>yarn.resourcemanager.admin.address</name>
+<value>${yarn.resourcemanager.hostname}:8033</value>
+</property>
 
-	<property>
-	<name>yarn.nodemanager.webapp.address</name>
-	<value>${yarn.resourcemanager.hostname}:8042</value>
-	</property>
+<property>
+<name>yarn.nodemanager.webapp.address</name>
+<value>${yarn.resourcemanager.hostname}:8042</value>
+</property>
 
-	<property>
-	<name>yarn.nodemanager.aux-services</name>
-	<value>mapreduce_shuffle</value>
-	</property>
+<property>
+<name>yarn.nodemanager.aux-services</name>
+<value>mapreduce_shuffle</value>
+</property>
 
-	<property>
-	<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-	<value>org.apache.hadoop.mapred.ShuffleHandler</value>
-	</property>
+<property>
+<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+<value>org.apache.hadoop.mapred.ShuffleHandler</value>
+</property>
 
-	<property>
-	<name>yarn.nodemanager.log-dirs</name>
-	<value>/run/log/yarn/userlogs</value>
-	</property>
+<property>
+<name>yarn.nodemanager.log.retain-seconds</name>
+<value>10800</value>
+</property>
 
-	<property>
-	<name>yarn.nodemanager.log.retain-seconds</name>
-	<value>10800</value>
-	</property>
+<property>
+<name>yarn.nodemanager.remote-app-log-dir</name>
+<value>/logs</value>
+</property>
 
-	<property>
-	<name>yarn.nodemanager.remote-app-log-dir</name>
-	<value>/logs</value>
-	</property>
-
-	<property>
-	<name>yarn.nodemanager.remote-app-log-dir-suffix</name>
-	<value>log</value>
-	</property>
+<property>
+<name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+<value>log</value>
+</property>
 ```
 
 * Format the filesystem:
@@ -532,7 +543,7 @@ __NOTE:__ For every user from which you want to use hadoop, use floowing step (d
 	$ hdfs dfs -chmod 750 /user/<username>
 
 
-### Test Hadoop Installation with Mapreduce Example
+### Test Hadoop Installation with Mapreduce Examples
 
 * Copy the input files into the distributed filesystem
 

@@ -1019,6 +1019,16 @@ aside .widget .widgetheading span {
 	right:0;
 }
 
+
+.widget a{
+color: #767676;
+}
+
+.widget a:hover{
+color: #ff7b25;
+}
+
+
 ul.cat li, ul.recent li {
 	margin:0 0 15px 0;
 	list-style:none;

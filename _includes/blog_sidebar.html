@@ -14,6 +14,7 @@
 			<img src="{{ '/assets/img/authors/' | prepend: site.baseurl | append: site.data.author.BWImage }}" alt="{{ site.data.author.Name }}">
 			{% endif %}
 			<p>I'm a {{ site.data.author.Title}}, {{ site.data.author.About | truncatewords: 30 }}</p>
+			<a class="smoth-scroll" href="{% if  page.url != '/' %}{{site.url}}{% endif %}#about">Read more</a>
 		</div>
 
 		<!-- Recent Post -->
